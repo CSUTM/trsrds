@@ -31,4 +31,4 @@ Finally, run your project in the browser!
 php artisan serve
 ```
 
-Test Jira Jenkins Integration 4
+Test Github Jenkins Integration 
