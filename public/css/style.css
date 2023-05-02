@@ -1,0 +1,528 @@
+/* helper */
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.login a{
+  color: white;
+  text-decoration: none;
+}
+
+.social-icons a {
+  color: white;
+}
+.grey-bg-options a {
+  text-decoration: none;
+  color: white;
+}
+
+.grey-bg-options a:hover {
+  color: white;
+}
+
+.bg-b-color {
+  background-color: #00a2e8;
+}
+
+.b-color {
+  color: #00a2e8;
+}
+
+.upper-nav {
+  background-color: #00a2e8;
+}
+
+.upper-nav-content {
+  display: flex;
+}
+
+.contact {
+  display: flex;
+}
+
+.contact img {
+  margin: 10px;
+  margin-left: 20px;
+  width: 20px;
+  color: white;
+}
+
+.contact p {
+  margin: 10px;
+  color: white;
+}
+
+.home-content {
+  display: flex;
+  margin: auto;
+  float: right;
+}
+
+.login p {
+  margin: 10px;
+  color: white;
+}
+
+.login {
+  display: flex;
+  margin-left: 10px;
+}
+
+.logo {
+  margin: auto 0;
+}
+
+.logo span {
+  color: #00a2e8;
+}
+
+.main-nav-options {
+  display: flex;
+  margin: auto;
+}
+
+.cart {
+  display: flex;
+}
+
+.cart h6 {
+  margin: auto 0px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+
+.collection img {
+  width: 100%;
+}
+
+.main-landing .carousel-indicators button {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50%;
+  background-color: transparent !important;
+  border: #00a2e8 solid 3px !important;
+}
+
+.main-landing .carousel-indicators .active {
+  background-color: #00a2e8 !important;
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50%;
+}
+
+
+.main-landing .carousel-caption {
+  top: 40%;
+}
+
+.customers .carousel-indicators  {
+  margin: 0;
+} 
+
+.white-bg{
+  width: 100%;
+  height: 70vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.about-us .row h6:hover {
+  color: #00a2e8;
+}
+.about-color-hover:hover {
+  fill: #00a2e8;
+  color: #00a2e8;
+}
+
+.about-us h1 {
+  margin-bottom: 80px;
+}
+
+.about-us-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.collection img {
+  opacity: 60%;
+}
+
+.collection {
+  position: relative;
+  background-color: black;
+}
+
+.collection-content h1 {
+  text-align: center;
+  margin-bottom: 150px;
+}
+
+.new-collection {
+  background-image: url("./../images/spring-flowers-dark.jpg");
+  color: white;
+}
+.our-products {
+  background-image: url("./../images/apple-black-dark.jpg");
+  color: white;
+}
+
+.my-card img {
+  width: 100%;
+  height: 80%;
+}
+
+.my-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  color: white;
+  width: 200px;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+}
+
+.my-card .grey-bg-options {
+  display: none;
+}
+.my-card:hover .grey-bg-options {
+  opacity: 1;
+  display: flex;
+}
+
+.my-card:hover img {
+  display: none;
+}
+
+.my-card:hover .price {
+  background-color: #86c4dd;
+}
+.my-card:hover .bottom-bar .bottom-bar-text {
+  background-color: #378cc3;
+}
+.blue-box {
+  background-color: transparent;
+}
+.blue-box:hover {
+  background-color: #378cc3;
+}
+
+.bottom-bar {
+  display: flex;
+}
+
+.bottom-bar-text {
+  background-color: #35312e;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.price {
+  position: relative;
+  margin: auto;
+  height: 100%;
+  width: 50px;
+  background-color: #938a85;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.grey-bg-options {
+  opacity: 0;
+}
+
+.padding-0 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.grey-bg-options {
+  position: relative;
+  background-color: #7a706e;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.boxes {
+  width: 100%;
+}
+
+.box {
+  border: solid white 1px;
+  width: 40px;
+  height: 40px;
+}
+
+.cart-box {
+  background-color: #35312e;
+  width: 150px;
+  height: 50px;
+}
+
+.save-up-to {
+  width: 100%;
+  height: 200px;
+  background-color: #378cc3;
+  color: white;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sale-box {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 70px;
+  height: 30px;
+  border: solid black 2px;
+  color: #7e7472;
+  text-align: center;
+}
+
+.new-box {
+  right: 0;
+  left: 10px;
+}
+
+.big-circle {
+  background-color: #7a706e;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin: 10px auto;
+}
+
+.circle {
+  background-color: #378cc3;
+  border: 5px solid black;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 3px;
+}
+
+.empty-circle {
+  background-color: white;
+}
+
+.place-order {
+  background-color: #378cc3;
+  width: 100%;
+  height: 500px;
+  margin-top: 20px;
+  padding-top: 30px;
+  color: #57504d;
+}
+
+.form-control {
+  width: 500px;
+  height: 60px;
+  margin: 20px 0;
+}
+
+.order-btn {
+  background-color: #786a61;
+  color: white;
+  text-align: center;
+  margin: auto;
+  width: 180px;
+  height: 60px;
+}
+
+.improve {
+  background-color: black;
+}
+
+.before-footer {
+  background-color: #363636;
+  width: 100%;
+  height: 500px;
+}
+
+.left-content {
+  display: grid;
+  grid-template-rows: auto;
+  color: white;
+}
+
+li {
+  text-decoration: none;
+}
+
+.form-name {
+  width: 300px;
+}
+
+.message-form {
+  width: 680px;
+  height: 300px;
+  text-align: start;
+  margin: 0 auto;
+}
+
+.send-btn {
+  background-color: #378cc3;
+  border: none;
+  height: 50px;
+  width: 150px;
+}
+footer {
+  color: white;
+  height: 50px;
+  background-color: black;
+}
+
+.collection-img img {
+  width: 100%;
+}
+nav .container {
+  display: flex;
+}
+
+.name-email {
+  display: flex;
+}
+
+.card-img-overlayl .container {
+  background-image: url("./spring-flowers-dark.jpg");
+}
+
+.cart {
+  margin: 0 !important;
+}
+.login svg {
+  margin: auto !important;
+}
+
+.right-content{
+  width: 50%;
+}
+
+@media (max-width: 1400px) {
+  textarea {
+    height: 80px;
+    width: 300px;
+  }
+
+  .before-footer {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact svg {
+    margin: 0;
+  }
+
+  .social-icons {
+    margin-bottom: 20px;
+  }
+  .name-email input {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .name-email {
+    flex-direction: column;
+  }
+
+  nav .container {
+    display: block;
+  }
+
+  .my-card {
+    position: relative;
+  }
+
+  .form-group input {
+    width: 300px;
+    text-align: start;
+  }
+
+  .save-up-to h3 {
+    text-align: center;
+  }
+
+  textarea {
+    height: 80px;
+    width: 340px;
+    text-align: start;
+  }
+
+  .before-footer {
+    height: 100vh;
+  }
+
+  .card {
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-color-hover svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .about-us h1 {
+    margin-bottom: 10px;
+  }
+
+  .contact svg {
+    margin: 0 !important;
+  }
+  .contact {
+    display: flex;
+    align-items: center;
+  }
+
+  .login {
+    display: flex;
+    align-items: center;
+  }
+
+  .login svg {
+    margin: 0 !important;
+  }
+
+  .first-nav .navbar {
+    display: none;
+  }
+}
+
+
+
+.item {
+  width: 300px;
+  height: 50px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
