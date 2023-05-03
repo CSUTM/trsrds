@@ -31,4 +31,3 @@ Finally, run your project in the browser!
 php artisan serve
 ```
 
-Test Github Jenkins Integration 8
