@@ -4,53 +4,68 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Requests\Auth\LoginRequest;
-use App\Http\Requests\Auth\RegisterRequest;
 
 class AuthController extends Controller
 {
-    public function register(RegisterRequest $request): JsonResponse
+    public function register(Request $request)
     {
+        $fields = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|string|unique:users,email',
+            'password' => 'required|string|confirmed'
+        ]);
+
         $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password)
+            'name' => $fields['name'],
+            'email' => $fields['email'],
+            'password' => bcrypt($fields['password'])
         ]);
 
         $token = $user->createToken('myapptoken')->plainTextToken;
 
-        return response()->json([
+        $response = [
             'user' => $user,
             'token' => $token
-        ], 201);
+        ];
+
+        return response($response, 201);
     }
 
-    public function login(LoginRequest $request): JsonResponse
+    public function login(Request $request)
     {
-        $user = User::where('email', $request->email)->first();
+        $fields = $request->validate([
+            'email' => 'required|string',
+            'password' => 'required|string'
+        ]);
+        // dd($fields);
+        // Check email
+        $user = User::where('email', $fields['email'])->first();
 
-        if (!$user || !Hash::check($request->password, $user->password)) {
-            return response()->json([
-                'message' => 'Invalid login credentials.'
+        // Check password
+        if (!$user || !Hash::check($fields['password'], $user->password)) {
+            return response([
+                'message' => 'Bad creds'
             ], 401);
         }
 
         $token = $user->createToken('myapptoken')->plainTextToken;
 
-        return response()->json([
+        $response = [
             'user' => $user,
             'token' => $token
-        ], 200);
+        ];
+
+        return response($response, 201);
     }
 
-    public function logout(Request $request): JsonResponse
+    public function logout(Request $request)
     {
-        $request->user()->tokens()->delete();
+        auth()->user()->tokens()->delete();
 
-        return response()->json([
-            'message' => 'Logged out successfully.'
-        ], 200);
+        return [
+            'message' => 'Logged out'
+        ];
     }
 }
