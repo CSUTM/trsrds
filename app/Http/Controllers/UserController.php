@@ -86,46 +86,35 @@ class UserController extends Controller
             'email' => ['required', 'email'],
             'password' => 'required'
         ]);
-
+    
         if (auth()->attempt($formFields)) {
             $request->session()->regenerate();
-
-            return redirect('/')->with('message', 'You are now logged in!');
+            
+            $redirectUrl = '/';
+            if (auth()->guard('admin')->check()) {
+                $redirectUrl = '/carousel/index';
+            }
+    
+            return redirect($redirectUrl)->with('message', 'You are now logged in!');
         }
-
+    
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
     }
-
-    // Authenticate admin
-    public function authenticate_admin(Request $request)
-    {
-        $formFields = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => 'required'
-        ]);
-
-        if (Auth::guard('admin')->attempt($formFields)) {
-            $request->session()->regenerate();
-
-            return redirect('/carousel/index')->with('message', 'You are now logged in!');
-        }
-
-        return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
-    }
-
+    
     public function apiAuthenticate(Request $request)
     {
         $formFields = $request->validate([
             'email' => ['required', 'email'],
             'password' => 'required'
         ]);
-
+    
         if (auth()->attempt($formFields)) {
             $request->session()->regenerate();
-
+            
             return 1;
         }
-
+    
         return 0;
     }
+    
 }
