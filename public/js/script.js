@@ -176,35 +176,54 @@ function dropdownCart() {
 
 function displayItemsToTheCart() {
     document.querySelector(".cart-total").innerHTML = totalPrice;
-    const newProducts = JSON.parse(localStorage.getItem("newProducts"));
-    console.log(newProducts);
-    if (newProducts) {
-        let html = "";
-        newProducts.forEach((product) => {
-            const trimmedTitle = product.name.substring(0, 11);
-            const htmlSegment = `
-      <li class="item m-3 d-flex align-items-center justify-content-between">
-          <div class="order d-flex align-items-center">
-              <img src=${product.image} alt="" width="50px" height="50px">
-              <p>${trimmedTitle}: </p>
-          </div>
-          <p>${product.price}$</p>
-      </li>
-      <hr>
-    `;
-            totalPrice += product.price;
+    // const newProducts = JSON.parse(localStorage.getItem("newProducts"));
+    // console.log(newProducts);
+    // if (newProducts) {
+    //     let html = "";
+    //     newProducts.forEach((product) => {
+    //         const trimmedTitle = product.name.substring(0, 11);
+    //         const htmlSegment = `
+    //   <li class="item m-3 d-flex align-items-center justify-content-between">
+    //       <div class="order d-flex align-items-center">
+    //           <img src=${product.image} alt="" width="50px" height="50px">
+    //           <p>${trimmedTitle}: </p>
+    //       </div>
+    //       <p>${product.price}$</p>
+    //   </li>
+    //   <hr>
+    // `;
+    //         totalPrice += product.price;
 
-            html += htmlSegment;
-        });
-
-        document.querySelector(".dropdown-menu").innerHTML = `
+    //         html += htmlSegment;
+    //     });
+    // }
+    document.querySelector(".dropdown-menu").innerHTML = `
         <li class="item m-3 d-flex align-items-center justify-content-between">
         <p>Number of orders:</p>
-        <p>${newProducts.length} orders</p>
+        <p>1 orders</p>
       </li>
       <hr>
       <div class="orders">
-        ${html}
+      <li class="item m-3 d-flex align-items-center justify-content-between">
+      <div class="order d-flex align-items-center">
+          <img src='./../images/technology-dark.jpg' alt="" width="50px" height="50px">
+          <p> Tablet </p>
+      </div>
+      <p>500$</p>
+  </li>
+
+     
+      <hr>
+      <div class="orders">
+      <li class="item m-3 d-flex align-items-center justify-content-between">
+      <div class="order d-flex align-items-center">
+          <img src='./../images/1663574852_apple_black_products-wallpaper-1920x1080.jpg' alt="" width="50px" height="50px">
+          <p> Mac book </p>
+      </div>
+      <p>1000$</p>
+  </li>
+  <hr>
+
       </div>
       <li class="item m-3 d-flex align-items-center justify-content-between">
         <p>Delivery fees: </p>
@@ -213,10 +232,9 @@ function displayItemsToTheCart() {
       <hr>
       <li class="item m-3 d-flex align-items-center justify-content-between">
         <p>Total Price: </p>
-        <p>${(Number(totalPrice) + 15).toFixed(2)}$</p>
+        <p>${(1500 + 15).toFixed(2)}$</p>
       </li>
     `;
-    }
 
-    document.querySelector(".cart-total").innerHTML = totalPrice;
+    document.querySelector(".cart-total").innerHTML = 1500;
 }
