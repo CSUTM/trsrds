@@ -45,28 +45,6 @@ class HomeController extends Controller
           echo 1;
      }
 
-     public function login(Request $request){
-          
-     }
-     // public function addimage(Request $request)
-     // {
-     //      // $image = new Image;
-     //      // $image->title = $request->title;
-
-     //      if ($request->hasFile('image')) {
-
-     //           // $path = $request->file('image')->store('images');
-     //           // $image->url = $path;
-
-     //           $req = $request->file('image');
-     //           $fileName = time() . '_' . $req->getClientOriginalName();
-     //           $req->move(public_path('images'), $fileName);
-     //           $formFields['image'] = $fileName;
-     //      }
-     //      // $image->save();
-     //      // return new ImageResource($image);
-     // }
-
      public function index()
      {
           return Carousel::all();
@@ -86,7 +64,6 @@ class HomeController extends Controller
           }
 
           return Carousel::create($formFields);
-          // return Carousel::create($request->all());
      }
 
      public function home()
