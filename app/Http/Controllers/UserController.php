@@ -79,6 +79,11 @@ class UserController extends Controller
         return view('users.login');
     }
 
+    public function show_blog()
+    {
+        return view('site.blog');
+    }
+
     // Authenticate User
     public function authenticate(Request $request)
     {

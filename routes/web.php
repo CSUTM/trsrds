@@ -102,6 +102,8 @@ Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::get('/login', [UserController::class, 'show'])->name('login');
 
+Route::get('/blog', [UserController::class, 'show_blog'])->name('blog');
+
 Route::get('/login/admin', [UserController::class, 'show_admin'])->name('login_admin');
 
 Route::post('users/authenticate', [UserController::class, 'authenticate'])->middleware('guest')->name('authenticate');
