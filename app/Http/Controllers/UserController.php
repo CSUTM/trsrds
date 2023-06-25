@@ -18,6 +18,23 @@ class UserController extends Controller
         return view('users.register');
     }
 
+    // The code smell in the provided code is duplication of similar functionality for creating and storing user data in the store_admin and store methods. To refactor it and eliminate the duplication, you can extract the common logic into a separate method and reuse it. Here's the refactored code:
+
+
+
+    private function createUser($formFields, $userModel, $redirectPath)
+    {
+        // Hash Password
+        $formFields['password'] = bcrypt($formFields['password']);
+
+        $user = $userModel::create($formFields);
+
+        auth()->login($user);
+        $token = $user->createToken('myapptoken')->plainTextToken;
+
+        return redirect($redirectPath)->with('message', 'User created and logged in');
+    }
+
     public function store_admin(Request $request)
     {
         $formFields = $request->validate([
@@ -27,17 +44,8 @@ class UserController extends Controller
             'password' => 'required|confirmed|min:4'
         ]);
 
-        // Hash Password
-        $formFields['password'] = bcrypt($formFields['password']);
-
-        $user = Admin::create($formFields);
-
-        auth()->login($user);
-        $token = $user->createToken('myapptoken')->plainTextToken;
-
-        return redirect('/carousel/index')->with('message', 'User created and logged in');
+        return $this->createUser($formFields, Admin::class, '/carousel/index');
     }
-
 
     public function store(Request $request)
     {
@@ -47,16 +55,12 @@ class UserController extends Controller
             'password' => 'required|confirmed|min:4'
         ]);
 
-        // Hash Password
-        $formFields['password'] = bcrypt($formFields['password']);
-
-        $user = User::create($formFields);
-
-        auth()->login($user);
-        $token = $user->createToken('myapptoken')->plainTextToken;
-
-        return redirect('/')->with('message', 'User created and logged in');
+        return $this->createUser($formFields, User::class, '/');
     }
+
+
+    // In the refactored code, the createUser method is extracted to handle the common logic for creating a user, hashing the password, logging in the user, and generating a token. The store_admin and store methods now call this createUser method with the appropriate parameters based on their respective models and redirect paths. This approach eliminates code duplication and improves maintainability.
+
 
     public function logout(Request $request)
     {
