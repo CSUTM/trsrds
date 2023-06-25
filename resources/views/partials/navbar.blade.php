@@ -112,7 +112,7 @@
                             <a class="nav-link" href="#">SHOP</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">BLOG</a>
+                            <a class="nav-link" href="{{route('blog')}}">BLOG</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">CONTACT US</a>
