@@ -134,6 +134,7 @@ Route::middleware('auth', 'isAdmin')->group(function () {
     Route::post('product/edit', [ProductController::class, 'edit']);
 
     Route::delete('product/delete/{id}', [ProductController::class, 'delete']);
+    Route::get('/notifications', [ProductController::class, 'notification']) ->name('notifications');;
 });
 
 // Route::get('email-test', function () {

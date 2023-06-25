@@ -119,4 +119,10 @@ class ProductController extends Controller
       $seeder =   new DatabaseSeeder;
       $seeder->test($id);
     }
+
+    public function notification()
+    {
+       
+        return view('notifications.notification');
+    }
 }
